@@ -19,6 +19,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Check secrets
+        run: |
+            echo "VARIABLES value ${{vars.DOCKER_USERNAME}}"
+            echo "SECRETS value ${{secrets.DOCKERHUB_TOKEN}}"
+          
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
